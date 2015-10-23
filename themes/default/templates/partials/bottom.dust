@@ -1,0 +1,11 @@
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{blog.url}/assets/js/bootstrap.min.js"></script>
+
+    <!-- highlight.js -->
+    <script src="{blog.url}/assets/js/highlight.pack.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{blog.url}/assets/js/clean-blog.js"></script>
+
+</body>
+</html>

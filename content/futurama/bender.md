@@ -1,6 +1,6 @@
 <!--
 author: Bender Bending Rodriguez
-background: static/futurama.png
+cover: static/futurama.png
 publish: 2996-05-09
 -->
 

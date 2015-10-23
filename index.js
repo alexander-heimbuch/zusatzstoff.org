@@ -1,3 +1,14 @@
-var utterson = require('utterson');
+var utterson = require('../utterson-generator');
 
-utterson();
+var meta = {
+        'futurama/': {
+            type: 'posts',
+            category: 'Futurama',
+            category_description: 'Welcome at Planet Express',
+            cover: 'static/futurama.png'
+        }
+    };
+
+utterson({
+    content: meta
+});

@@ -1,24 +1,17 @@
-{{!< default}}
-
-{{#post}}
-
-    {{> header_post}}
+{>"partials/head"/}
+{>"partials/header_post"/}
 
     <article>
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    {{content}}
+                    {content|s}
                 </div>
             </div>
         </div>
     </article>
 
     <hr>
-{{/post}}
 
-{{!> comment_disqus}}
-{{> comment_facebook}}
-{{!> comment_google_plus}}
-
-
+{>"partials/footer"/}
+{>"partials/bottom"/}

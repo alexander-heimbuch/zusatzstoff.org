@@ -6,22 +6,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{meta_description}}">
+    <meta name="description" content="{meta_description}">
     <meta name="author" content="">
 
-    <title>{{meta_title}}</title>
+    <title>{title}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset "css/bootstrap.min.css"}}" rel="stylesheet">
+    <link href="{blog.url}/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Clean Blog CSS -->
-    <link href="{{asset "css/clean-blog.min.css"}}" rel="stylesheet">
+    <link href="{blog.url}/assets/css/clean-blog.min.css" rel="stylesheet">
 
     <!-- Github CSS -->
-    <link href="{{asset "css/github.css"}}" rel="stylesheet">
+    <link href="{blog.url}/assets/css/github.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{asset "css/custom.css"}}" rel="stylesheet">
+    <link href="{blog.url}/assets/css/custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -35,27 +35,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {{ghost_head}}
 </head>
 
 <body>
-
-    {{> navigation}}
-
-    {{{body}}}
-
-    {{> footer}}
-
-    {{ghost_foot}}
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset "js/bootstrap.min.js"}}"></script>
-
-    <!-- highlight.js -->
-    <script src="{{asset "js/highlight.pack.js"}}"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="{{asset "js/clean-blog.js"}}"></script>
-
-</body>
-</html>
+{>"partials/navigation"/}

@@ -1,6 +1,6 @@
 <!--
 author: Philip J. Fry
-background: static/futurama.png
+cover: static/futurama.png
 publish: 2999-12-31
 -->
 

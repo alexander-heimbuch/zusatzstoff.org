@@ -1,6 +1,6 @@
 <!--
-author: Leela
-background: static/futurama.png
+author: Turanga Leela
+cover: static/futurama.png
 publish: 3001-01-12
 -->
 
