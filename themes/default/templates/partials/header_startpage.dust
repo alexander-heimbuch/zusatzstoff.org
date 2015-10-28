@@ -4,7 +4,7 @@
 {?blog.cover}
     style="background-image: url('{blog.url}/{blog.cover}')">
 {:else}
-    style="background-image: url('{blog.url}/assets/img/home-bg.jpg')">
+    style="background-image: url('{blog.url}/assets/img/default-cover.jpg')">
 {/blog.cover}
 
     <div class="container">

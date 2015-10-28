@@ -14,6 +14,9 @@ var blog = {
         link: this.url = '/doctor-who',
         label: 'Doctor Who'
     }, {
+        link: this.url = '/dexter',
+        label: 'Dexter'
+    }, {
         link: this.url = '/about',
         label: 'About'
     }],
@@ -23,17 +26,11 @@ var blog = {
 };
 
 module.exports = {
-    startpage: function (data, cb) {
-        data.blog = blog;
-
-        renderer('startpage', data, function (html) {
-            cb('index.html', html);
-        });
-    },
+    startpage: require('./startpage')(blog, renderer),
 
     category: function (data, cb) {
         data.blog = blog;
-        console.log(data);
+
         renderer('category', data, function (html) {
             cb('index.html', html);
         });

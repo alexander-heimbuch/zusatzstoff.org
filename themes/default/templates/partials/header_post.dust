@@ -2,7 +2,7 @@
 {?cover}
     style="background-image: url('{blog.url}/{cover}')">
 {:else}
-    style="background-image: url('{blog.url}/assets/img/home-bg.jpg')">
+    style="background-image: url('{blog.url}/assets/img/default-cover.jpg')">
 {/cover}
 
 

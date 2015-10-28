@@ -16,11 +16,11 @@
                 </div>
                 <hr>
             {/posts}
+            {>"partials/pagination"/}
         </div>
     </div>
 </div>
 
 <hr>
-
 {>"partials/footer"/}
 {>"partials/bottom"/}

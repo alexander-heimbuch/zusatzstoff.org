@@ -1,0 +1,13 @@
+<!-- Pager -->
+<ul class="pager">
+    {?pagination.prev}
+    	<li class="previous">
+    		<a href="{pagination.prev}">&larr; Newer Posts</a>
+    	</li>
+    {/pagination.prev}
+    {?pagination.next}
+    	<li class="next">
+    		<a href="{pagination.next}">Older Posts &rarr;</a>
+    	</li>
+    {/pagination.next}
+</ul>

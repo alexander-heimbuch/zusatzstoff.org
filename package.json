@@ -31,6 +31,7 @@
     "dustjs-linkedin": "^2.7.2",
     "fs-extra": "^0.24.0",
     "glob": "^5.0.15",
+    "lodash": "^3.10.1",
     "pony-config": "^1.0.5",
     "utterson": "^1.0.0"
   }
