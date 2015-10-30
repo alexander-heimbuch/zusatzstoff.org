@@ -28,8 +28,6 @@ module.exports = function (blog, renderer) {
                 'next': pagination[page + 1]
             };
 
-            console.log(data);
-
             renderer('startpage', data, function (html) {
                 cb({dest: file, 'content': html});
             });
