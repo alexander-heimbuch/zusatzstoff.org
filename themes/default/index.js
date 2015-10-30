@@ -3,21 +3,21 @@ var path = require('path'),
     renderer = require('./engine')(path.resolve(__dirname, 'templates'));
 
 var blog = {
-    url: 'http://localhost:8080',
+    url: 'https://alexander-heimbuch.github.io/utterson-example',
     title: 'Utterson Example',
     description: 'Fillerama in GhostAhoy',
     now: new Date(),
     navigation: [{
-        link: this.url = '/futurama',
+        link: this.url + '/futurama',
         label: 'Futurama'
     }, {
-        link: this.url = '/doctor-who',
+        link: this.url + '/doctor-who',
         label: 'Doctor Who'
     }, {
-        link: this.url = '/dexter',
+        link: this.url + '/dexter',
         label: 'Dexter'
     }, {
-        link: this.url = '/about',
+        link: this.url + '/about',
         label: 'About'
     }],
     social: {
