@@ -33,6 +33,6 @@
     "glob": "^5.0.15",
     "lodash": "^3.10.1",
     "pony-config": "^1.0.5",
-    "utterson": "^1.0.0"
+    "utterson": "^1.0.2"
   }
 }

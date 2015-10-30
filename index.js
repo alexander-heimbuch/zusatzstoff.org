@@ -1,4 +1,4 @@
-var utterson = require('../utterson-generator');
+var utterson = require('utterson');
 
 var meta = {
         'futurama/': {
