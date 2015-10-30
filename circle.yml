@@ -1,0 +1,21 @@
+machine:
+  node:
+    version: 4.1.0
+
+test:
+  override:
+    - npm start
+
+deployment:
+  release:
+    branch:
+      - master
+    commands:
+      - git config --global user.email circleci@circleci
+      - git config --global user.name CircleCI
+      - cd build/ && git init
+      - cd build/ && git remote add github-pages git://github.com/alexander-heimbuch/utterson-example.git
+      - cd build/ && git fetch github-pages
+      - cd build/ && git add --all
+      - cd build/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
+      - cd build/ && git push -force github-pages gh-pages
