@@ -2,6 +2,13 @@ machine:
   node:
     version: 4.1.0
 
+dependencies:
+  override:
+    - git config --global user.email circleci@circleci
+    - git config --global user.name CircleCI
+    - git clone -b gh-pages https://github.com/alexander-heimbuch/utterson-example.git build
+    - rm -rf build/*
+
 test:
   override:
     - npm start
@@ -11,11 +18,6 @@ deployment:
     branch:
       - master
     commands:
-      - git config --global user.email circleci@circleci
-      - git config --global user.name CircleCI
-      - cd build/ && git init
-      - cd build/ && git remote add github-pages git://github.com/alexander-heimbuch/utterson-example.git
-      - cd build/ && git fetch github-pages
       - cd build/ && git add --all
       - cd build/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
-      - cd build/ && git push -force github-pages gh-pages
+      - cd build/ && git push --force origin gh-pages
