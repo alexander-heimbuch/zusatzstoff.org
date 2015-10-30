@@ -23,9 +23,6 @@ var  buildCache = function (templateDir) {
         require('dustjs-helpers');
         require('dustjs-helper-formatdate');
         require('dustjs-helper-maxlength/maxlength');
-
-        dust.isDebug = true;
-        dust.debugLevel = 'DEBUG';
     };
 
 module.exports = function (templateDir) {
