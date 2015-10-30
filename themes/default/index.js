@@ -1,30 +1,9 @@
 /* eslint-env node */
-var path = require('path'),
-    renderer = require('./engine')(path.resolve(__dirname, 'templates')),
-    baseUrl = 'https://alexander-heimbuch.github.io/utterson-example';
+'use strict';
 
-var blog = {
-    url: baseUrl,
-    title: 'Utterson Example',
-    description: 'Fillerama in GhostAhoy',
-    now: new Date(),
-    navigation: [{
-        link: baseUrl + '/futurama',
-        label: 'Futurama'
-    }, {
-        link: baseUrl + '/doctor-who',
-        label: 'Doctor Who'
-    }, {
-        link: baseUrl + '/dexter',
-        label: 'Dexter'
-    }, {
-        link: baseUrl + '/about',
-        label: 'About'
-    }],
-    social: {
-        github: 'https://github.com/alexander-heimbuch/utterson'
-    }
-};
+var path = require('path'),
+    blog = require('../../blog'),
+    renderer = require('./engine')(path.resolve(__dirname, 'templates'));
 
 module.exports = {
     startpage: require('./startpage')(blog, renderer),
