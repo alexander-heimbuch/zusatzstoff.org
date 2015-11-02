@@ -19,5 +19,5 @@ deployment:
       - master
     commands:
       - cd build/ && git add --all
-      - cd build/ && git commit -m "Utterson (`date '+%F %T %Z'`) [ci skip]"
+      - cd build/ && git commit --allow-empty -m "Utterson update to $CIRCLE_SHA1 (`date '+%F %T %Z'`) [ci skip]"
       - cd build/ && git push --force origin gh-pages
