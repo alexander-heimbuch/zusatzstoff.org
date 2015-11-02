@@ -4,8 +4,8 @@ machine:
 
 dependencies:
   override:
-    - git config --global user.email circleci@circleci
-    - git config --global user.name CircleCI
+    - git config --global user.email sir@utterson.bot
+    - git config --global user.name "Sir Utterson"
     - git clone -b gh-pages https://github.com/alexander-heimbuch/utterson-example.git build
     - rm -rf build/*
 
@@ -19,5 +19,5 @@ deployment:
       - master
     commands:
       - cd build/ && git add --all
-      - cd build/ && git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
+      - cd build/ && git commit -m "Utterson (`date '+%F %T %Z'`) [ci skip]"
       - cd build/ && git push --force origin gh-pages
