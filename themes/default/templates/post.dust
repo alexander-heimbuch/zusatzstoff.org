@@ -1,17 +1,38 @@
-{>"partials/head"/}
-{>"partials/header_post"/}
+{>"partials/header"/}
 
-    <article>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    {content|s}
-                </div>
-            </div>
+<header class="main-header post-head" {?cover}style="background-image: url({cover})"{/cover}>
+    {>"partials/menu"/}
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title"><a href="/">{blog.title}</a></h1>
+            <h2 class="page-description">{blog.description}</h2>
         </div>
+    </div>
+    <a class="scroll-down" href="#content"><i class="fa fa-angle-down"></i></a>
+</header>
+
+<main class="content" id="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">{title}</h1>
+            <section class="post-meta">
+                <time datetime="{@formatDate date="{publish}" format="YYYY-MM-DDTHH:mm:ss.000Z" lan="de-DE"/}" itemprop="datePublished">{@formatDate date="{publish}" format="DD.MM.YYYY" lan="de-DE"/}</time> in <a href="{category}">{@Titlecase}{category}{/Titlecase}</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            {content|s}
+        </section>
+
+        <footer class="post-footer">
+            {?author}{>"partials/author"/}{/author}
+            {?comments}{>"partials/comments"/}{/comments}
+        </footer>
+
     </article>
 
-    <hr>
+</main>
 
 {>"partials/footer"/}
-{>"partials/bottom"/}

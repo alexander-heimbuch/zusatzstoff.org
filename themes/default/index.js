@@ -3,7 +3,8 @@
 
 var path = require('path'),
     blog = require('../../blog'),
-    renderer = require('./engine')(path.resolve(__dirname, 'templates'));
+    renderer = require('./lib/renderer')(path.resolve(__dirname, 'templates')),
+    authors = require('./lib/authors');
 
 module.exports = {
     startpage: require('./startpage')(blog, renderer),
@@ -11,13 +12,18 @@ module.exports = {
     category: function (data, cb) {
         data.blog = blog;
 
-        renderer('category', data, function (html) {
-            cb('index.html', html);
+        authors(data.posts, function (resolved) {
+            data.posts = resolved;
+            renderer('index', data, function (html) {
+                cb('index.html', html);
+            });
         });
+
     },
 
     page: function (data, cb) {
         data.blog = blog;
+
         renderer('page', data, function (html) {
             cb(data.name + '.html', html);
         });
@@ -25,12 +31,13 @@ module.exports = {
 
     post: function (data, cb) {
         data.blog = blog;
-        renderer('post', data, function (html) {
-            cb(data.name + '.html', html);
+        authors(data, function (resolved) {
+            data = resolved;
+            renderer('post', data, function (html) {
+                cb(data.name + '.html', html);
+            });
         });
     },
 
-    custom: function (pipe, cb) {
-        cb({src: path.resolve(__dirname, 'assets'), dest: 'assets'});
-    }
+    custom: require('./assets')
 };

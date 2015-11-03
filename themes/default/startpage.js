@@ -28,7 +28,7 @@ module.exports = function (blog, renderer) {
                 'next': pagination[page + 1]
             };
 
-            renderer('startpage', data, function (html) {
+            renderer('index', data, function (html) {
                 cb({dest: file, 'content': html});
             });
         };
@@ -37,7 +37,6 @@ module.exports = function (blog, renderer) {
         var pages = Array.apply(null, Array(Math.ceil(data.posts.length / postsPerPage)));
 
         data.blog = blog;
-
         pages.forEach(function (element, index) {
             pages[index] = pager(index);
         });

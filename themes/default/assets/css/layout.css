@@ -1,0 +1,128 @@
+/** Custom-Templates */
+
+h1.page-title a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.bookmarks .post-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bookmarks .post-background {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.bookmarks .post-wrapper {
+    background-color: white;
+    opacity: 0.9;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    padding: 2rem 0;
+}
+
+.bookmarks .post-meta {
+    display: block;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 95%;
+    text-align: right;
+}
+
+.flattr {
+    width: auto;
+    display: inline-block;
+    float: right;
+    text-align: right;
+    margin: 0.5rem 2rem 0 0;
+}
+
+.flattr iframe {
+    display: inline-block;
+    margin: 0;
+}
+
+/** Custom Layouts */
+
+.three-cols {
+    width: 28%;
+    margin: 2%;
+    height: 250px;
+}
+
+.two-cols {
+    width: 100%;
+    text-align: center;
+}
+
+.two-cols img {
+    width: 45%;
+    margin: 2%;
+    height: auto;
+    display: inline-block;
+    left: auto;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.two-cols {
+    margin-bottom: 25px;
+}
+
+.single-col img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 920px) {
+    .three-cols {
+        float: none;
+        margin: 25px auto;
+        width: 80%;
+    }
+
+    .two-cols img, .single-col img {
+        display: block;
+        margin: 25px auto;
+        width: 80%;
+    }
+}
+
+.layer {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.layer a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.layer h3 {
+    position: absolute;
+    width: 100%;
+    font-size: 2rem;
+    top: 50%;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 0px 3px #000;
+}

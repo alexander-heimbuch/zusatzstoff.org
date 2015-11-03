@@ -1,7 +1,7 @@
 {
-  "name": "utterson-example",
-  "version": "0.0.1",
-  "description": "Example installation for static blog and page generator utterson",
+  "name": "zusatzstoff.org",
+  "version": "1.0.0",
+  "description": "Zusatzstoff.org Website",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexander-heimbuch/utterson-example.git"
+    "url": "git+https://github.com/zusatzstoff/zusatzstoff.org.git"
   },
   "keywords": [
     "utterson",
@@ -23,16 +23,21 @@
   },
   "homepage": "https://github.com/alexander-heimbuch/utterson-example#readme",
   "dependencies": {
+    "cheerio": "^0.19.0",
     "common-dustjs-helpers": "^0.1.0",
     "dust-intl": "^1.1.0",
     "dustjs-helper-formatdate": "https://github.com/zusatzstoff/dustjs-helper-formatdate.git",
     "dustjs-helper-maxlength": "0.0.2",
     "dustjs-helpers": "^1.7.3",
     "dustjs-linkedin": "^2.7.2",
+    "font-awesome": "^4.4.0",
     "fs-extra": "^0.24.0",
     "glob": "^5.0.15",
     "lodash": "^3.10.1",
     "pony-config": "^1.0.5",
-    "utterson": "^1.0.2"
+    "request": "^2.65.0",
+    "uglify-js": "^2.5.0",
+    "uglifycss": "0.0.18",
+    "utterson": "^1.0.3"
   }
 }

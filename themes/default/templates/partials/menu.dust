@@ -1,0 +1,3 @@
+<nav class="main-nav overlay clearfix">
+    {?blog.navigation}<a class="menu-button" href="javascript:"><span class="burger">☰</span><span class="word">Menu</span></a>{/blog.navigation}
+</nav>

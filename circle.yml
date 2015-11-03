@@ -2,22 +2,12 @@ machine:
   node:
     version: 4.1.0
 
-dependencies:
-  override:
-    - git config --global user.email sir@utterson.bot
-    - git config --global user.name "Sir Utterson"
-    - git clone -b gh-pages https://github.com/alexander-heimbuch/utterson-example.git build
-    - rm -rf build/*
-
 test:
   override:
     - npm start
 
 deployment:
-  release:
-    branch:
-      - master
+  production:
+    branch: master
     commands:
-      - cd build/ && git add --all
-      - cd build/ && git commit --allow-empty -m "Utterson update to $CIRCLE_SHA1 (`date '+%F %T %Z'`) [ci skip]"
-      - cd build/ && git push --force origin gh-pages
+      - surge --project ./build --domain zusatzstoff.surge.sh

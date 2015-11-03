@@ -1,0 +1,16 @@
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        {#blog.navigation}
+        <li><a href="{link}">{title}</a></li>
+        {/blog.navigation}
+    </ul>
+    <div class="contact">
+    {#blog.contact}
+        <a href="{link}"><i class="fa fa-2x {icon}"></i></a>
+    {/blog.contact}
+    </div>
+</div>

@@ -1,25 +1,33 @@
 /* eslint-env node */
-var baseUrl = 'https://alexander-heimbuch.github.io/utterson-example';
+var baseUrl = 'zusatzstoff.surge.sh';
 
 module.exports = {
     url: baseUrl,
-    title: 'Utterson Example',
-    description: 'Fillerama in GhostAhoy',
     now: new Date(),
+    title: 'Zusatzstoff.org',
+    description: 'Create. Destroy. Repeat.',
+
+    cover: 'static/background.jpg',
+
     navigation: [{
-        link: baseUrl + '/futurama',
-        label: 'Futurama'
+        link: baseUrl + '/',
+        title: 'Home'
     }, {
-        link: baseUrl + '/doctor-who',
-        label: 'Doctor Who'
+        link: baseUrl + '/hardware',
+        title: 'Hardware'
     }, {
-        link: baseUrl + '/dexter',
-        label: 'Dexter'
-    }, {
-        link: baseUrl + '/about',
-        label: 'About'
+        link: baseUrl + '/impressum',
+        title: 'Impressum'
     }],
-    social: {
-        github: 'https://github.com/alexander-heimbuch/utterson'
-    }
+
+    contact: [{
+        icon: 'fa-github',
+        link: 'https://github.com/alexander-heimbuch'
+    }, {
+        icon: 'fa-twitter',
+        link: 'https://twitter.com/zusatzstoff'
+    }, {
+        icon: 'fa-inbox',
+        link: 'mailto:alex@zusatzstoff.org'
+    }]
 };

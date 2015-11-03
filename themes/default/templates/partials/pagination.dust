@@ -1,13 +1,10 @@
-<!-- Pager -->
-<ul class="pager">
+<nav class="pagination" role="pagination">
     {?pagination.prev}
-    	<li class="previous">
-    		<a href="{pagination.prev}">&larr; Newer Posts</a>
-    	</li>
+        <a class="newer-posts" href="{pagination.prev}">← Neuere Beiträge</a>
     {/pagination.prev}
     {?pagination.next}
-    	<li class="next">
-    		<a href="{pagination.next}">Older Posts &rarr;</a>
-    	</li>
+      <li class="next">
+        <a class="older-posts" href="{pagination.next}">Ältere Beiträge →</a>
+      </li>
     {/pagination.next}
-</ul>
+</nav>

@@ -1,16 +1,23 @@
-{>"partials/head"/}
-{>"partials/header_page"/}
+{>"partials/header"/}
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <p>{content|s}</p>
-        </div>
-    </div>
-</div>
+<header class="main-header post-head no-cover">
+    {>"partials/menu"/}
+</header>
 
-<hr/>
+<main class="content" id="content" role="main">
+
+    <article class="post page">
+
+        <header class="post-header">
+            <h1 class="post-title">{title}</h1>
+        </header>
+
+        <section class="post-content">
+            {content|s}
+        </section>
+
+    </article>
+
+</main>
+
 {>"partials/footer"/}
-{>"partials/bottom"/}
-
