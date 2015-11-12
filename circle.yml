@@ -2,10 +2,6 @@ machine:
   node:
     version: 4.1.0
 
-test:
-  override:
-    - npm start
-
 deployment:
   production:
     branch: master
