@@ -1,8 +1,6 @@
 /* eslint-env node */
-var baseUrl = 'zusatzstoff.surge.sh';
-
 module.exports = {
-    url: baseUrl,
+    url: 'zusatzstoff.org',
     now: new Date(),
     title: 'Zusatzstoff.org',
     description: 'Create. Destroy. Repeat.',
@@ -10,13 +8,13 @@ module.exports = {
     cover: 'static/background.jpg',
 
     navigation: [{
-        link: baseUrl + '/',
+        link: '/',
         title: 'Home'
     }, {
-        link: baseUrl + '/hardware',
+        link: '/hardware',
         title: 'Hardware'
     }, {
-        link: baseUrl + '/impressum',
+        link: '/impressum',
         title: 'Impressum'
     }],
 

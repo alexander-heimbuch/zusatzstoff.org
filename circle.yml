@@ -6,4 +6,4 @@ deployment:
   production:
     branch: master
     commands:
-      - surge --project ./build --domain zusatzstoff.surge.sh
+      - surge --project ./build --domain zusatzstoff.org
