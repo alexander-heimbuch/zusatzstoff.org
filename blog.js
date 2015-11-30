@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-    url: 'zusatzstoff.org',
+    url: '//zusatzstoff.org',
     now: new Date(),
     title: 'Zusatzstoff.org',
     description: 'Create. Destroy. Repeat.',
