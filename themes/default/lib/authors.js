@@ -6,7 +6,7 @@ var request = require('request'),
     twitterBase = 'https://twitter.com/';
 
 var requestAuthorInformation = function (name, done) {
-        if (name.indexOf('@') === -1) {
+        if (name === undefined || name.indexOf('@') === -1) {
             return done(undefined);
         }
 

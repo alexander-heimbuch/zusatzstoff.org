@@ -1,15 +1,18 @@
 /* eslint-env node */
-module.exports = {
-    url: '//zusatzstoff.org',
+var blog = {
+    url: (process.env.NODE_ENV === 'development') ? '//localhost:8080' : '//zusatzstoff.org',
+
     now: new Date(),
     title: 'Zusatzstoff.org',
     description: 'Create. Destroy. Repeat.',
-
     cover: 'static/background.jpg',
 
     navigation: [{
         link: '/',
         title: 'Home'
+    }, {
+        link: '/ikeahacks',
+        title: 'Ikeahacks'
     }, {
         link: '/hardware',
         title: 'Hardware'
@@ -28,4 +31,8 @@ module.exports = {
         icon: 'fa-inbox',
         link: 'mailto:alex@zusatzstoff.org'
     }]
+};
+
+module.exports = {
+    blog: blog
 };

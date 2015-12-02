@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "rm -rf build/ && NODE_ENV=development node index.js",
     "test": "node index.js"
   },
   "repository": {
@@ -38,7 +39,7 @@
     "request": "^2.65.0",
     "uglify-js": "^2.5.0",
     "uglifycss": "0.0.18",
-    "utterson": "^1.0.3"
+    "utterson": "^1.0.4"
   },
   "devDependencies": {
     "surge": "^0.17.2"
