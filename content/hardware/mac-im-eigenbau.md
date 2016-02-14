@@ -40,7 +40,7 @@ Bei der Auswahl der Hardware habe ich mich auf die Empfehlungen von [tonymacx86.
 
 #### 3.1 Clover
 
-Clover ist ein UEFI Bootloader, der sich direkt in die UEFI Partition des Bootmediums einklinkt und für einen Hackintosh die notwendige Umgebung simmuliert. Die Hardwareseitige Untestützung von UEFI ermöglicht es Clover ein sehr unangenehmes Ziel für Apple zu sein, da auch Apple ein sehr identisches System auf dem nativen Macs verwendet. Nebenbei ermöglicht Clover bspw. Treiber auf der UEFI Partition zu speichern und während des Bootvorgangs zu injezieren, was die Updatebarkeit des Hackintoshs extrem verbessert. Clover kann auf [Sourceforge](http://sourceforge.net/projects/cloverefiboot/) heruntergeladen werden.
+Clover ist ein UEFI Bootloader, der sich direkt in die UEFI Partition des Bootmediums installiert und für einen Hackintosh die notwendige Umgebung simmuliert. Die Hardwareseitige Untestützung von UEFI ermöglicht es Clover ein sehr unangenehmes Ziel für Apple zu sein, da auch Apple ein sehr identisches System auf dem nativen Macs verwendet. Nebenbei ermöglicht Clover bspw. Treiber auf der UEFI Partition zu speichern und während des Bootvorgangs zu injezieren, was die Updatebarkeit des Hackintoshs extrem verbessert. Clover kann auf [Sourceforge](http://sourceforge.net/projects/cloverefiboot/) heruntergeladen werden.
 
 #### 3.2 Bios Update
 
@@ -81,7 +81,7 @@ Anschließend werden die Änderungen am Bootstick vorgenommen, was einige Minute
 
 Nach der Anpassung des Installationssticks sind noch einige weitere Schritte notwendig. Hierbei geht es darum fehlende Treiber sowie eine Konfiguration zu der EFI Partition des USB Sticks hinzuzufügen:
 
-* Ersetzt in /EFI/CLOVER/ die standard config.plist mit dieser hier // TODO: Installer Zip packen
+* Ersetzt in /EFI/CLOVER/ die standard config.plist mit dieser hier: [default config.plist](/static/hackintosh/config.plist)
 * Sollte unter /EFI/CLOVER/kexts/ kein Ordner namens 10.11 existieren, erstellt ihn
 * Entpackt die folgende Datei und verschiebt die Dateien in den Ordner /EFI/CLOVER/kexts/10.11
 
@@ -150,8 +150,7 @@ Jetzt sollte der Clover Installer vom USB-Stick gestartet werden. Das gleiche pr
 Auch dieser Vorgang kann einige Minuten Inanspruch nehmen.
 Sollte die selbe Hardware Konfiguration vorliegen wie in diesem Artikel beschrieben dann sind anfolgende Schritte durchzuführen. Andernfalls ist es notwendig die Konfiguration in mehreren Schritten selbst zu erstellen. Hierfür empfiehlt sich der Clover Konfigurator. Bei identischer Hardware konfiguration müssen noch folgende Änderungen an der UEFI Partition des Mac OSX Volumen durchgeführt werden:
 
-// TODO: Dateien vorbereiten
-* Navigiert zu /Volumes/EFI/EFI/CLOVER/ und kopiert diese [Konfiguration]
+* Navigiert zu /Volumes/EFI/EFI/CLOVER/ und kopiert die Konfigurationsdatei [Konfiguration](/static/hackintosh/config.plist)
 * Entpackt diese [Datei] und kopiert den Ordner 10.11 in /Volumes/EFI/EFI/CLOVER/kext/
 
 Zuletzt fehlt in der vorliegenden Konfiguration nurnoch der Audiotreiber. Dieser kann leider nicht durch Clover injected werden, sondern muss über [dieses Script](https://github.com/toleda/audio_CloverALC) gepatcht werden. Dabei muss einfach den Installationsanleitungen bei dem Repo gefolgt und als Audio-Codec der Realtek 889 ausgewählt werden.
@@ -165,13 +164,11 @@ Nach der Installation sollte der Hackintosh neugestartet werden. Diesmal sollte 
 
 Wenn Probleme auftreten, wurden wahrscheinlich falsche Treiber ausgewählt oder sie fehlen gänzlich.
 
-#### 5.2 iCloud und iMessage
+#### 5.2 iCloud und iMessage [9]
 
-// TODO: Anpassen auf CLOVER
-Damit die Apple Dienste funktionieren muss dem Hackintosh erstmal eine Seriennummer verpasst werden. Diese wird normalerweise unter >/Extras/smbios.plist (SMserial) definiert.
-Obwohl MultiBeast diese von Haus aus mit angelten sollte kann es vorkommen, dass die Seriennummer nicht gesetzt ist. Sollte dies der Fall sein, kann sie mit dem [Chameleon Wizard](http://www.tonymacx86.com/downloads.php?do=cat&id=10) generiert werden [7]. Die Seriennummer setzt sich aus den definierten Merkmalen des Macs (bspw. iMac, Mac Pro usw.) sowie aus dem Baujahr und weiteren Details zusammen. Im Chameleon Wizard können alle Details unter “SMBios” eingestellt werden.
+Damit die Apple Dienste funktionieren muss dem Hackintosh erstmal die notwendigen Identifizierungsmerkmale eingepflanzt werden. Dazu gehören MLB, SerialNumber sowie SmUUID. Hierfür eignet sich der wirklich empfehlenswerte [CLOVER Configurator](http://mackie100projects.altervista.org/clover-configurator). Insbesondere eine Einzigartige  Seriennummer ist wichtig, andernfalls wird die Authentifizierung nicht erfolgreich sein. Zur Sicherstellung kann ein [Apple eigener Dienst](https://selfsolve.apple.com) verwendet werden, generiert solange Seriennummern bis der Dienst kein Ergebnis mehr liefert.
 
-Wenn die Seriennummer generiert ist, können die Apple Dienste aktiviert werden. Sollte alles funktionieren (insbesondere iMessage) dann ist es äußerst ratsam die >smbios.plist Datei zu speichern oder sich zumindest die Seriennummer zu notieren.
+Wenn die Seriennummer generiert ist, können die Apple Dienste aktiviert werden. Sollte alles funktionieren (insbesondere iMessage) dann ist es äußerst ratsam die config.plist Datei zu speichern oder sich zumindest die Seriennummer zu notieren. Andernfalls müssen alle anderen Indetifizierungsmerkmale ebenfalls neu erzeugt werden.
 
 Sollten Probleme mit iMessage auftreten kann [dieser Artikel](http://www.tonymacx86.com/general-help/110471-how-fix-imessage.html) Abhilfe schaffen. Im schlimmsten Fall hilft nur noch der Griff zum Hörer um die Apple Support Hotline anzurufen und num eine manuelle Freischaltung des Rechners zu bitten. Hier gilt: die Support Mitarbeiter wissen anhand der Seriennummer sofort das es sich nicht um einen originalen Mac handelt. Es ist äußerst hilfreich, den Besitz eines originalen Macs anzusprechen.
 
@@ -181,11 +178,11 @@ Für die Verwendung der [Apple Tastatur (MC184D/B)](http://www.amazon.de/Apple-M
 
 ### 6 Updates und Backup
 
-Wie Eingangs erwähnt ist es dringend notwendig eine gute Backupstrategie parat zu haben wenn der Hackintosh als Produktivrechner eingesetzt werden soll. Es empfehlen sich deshalb verschiedene Backupstrategien einzusetzen.
+Wie Eingangs erwähnt ist es dringend notwendig eine gute Backupstrategie parat zu haben, insbesondere wenn der Hackintosh als Produktivrechner eingesetzt werden soll. Es empfehlen sich deshalb verschiedene Backupstrategien einzusetzen.
 
 Für die Sicherung des eigentlichen Systems eignet sich ein 1zu1 Backup mit dem [Carbon Copy Cloner](https://www.bombich.com/). Hiermit lässt sich auf externen Festplatten eine exakte Kopie des Basissystems anlegen von der im Notfall direkt gebootet und das System zurück auf das eigentliche System gespiegelt werden kann. Hierfür muss nach der Erstellung des Backups der [Chimera Bootloader auf das Volume installiert werden](http://www.macbreaker.com/2012/06/backup-your-hackintosh-with-carbon-copy.html). Eine solche Kopie ist vor jedem Update von Mac OSX zu empfehlen um sicherzustellen das die Systemfunktionalität wiederhergestellt werden kann.
 
-Zur Sicherung von Dateien kann wie auch bei originalen Macs die TimeMachine eingesetzt werden. Theoretisch ist auch eine Installation aus einem TimeMachine Backup möglich, praktisch verlangt das aber im Nachgang die erneute Konfiguration und Nachinstallation von Treibern.
+Zur Sicherung von Dateien kann wie auch bei originalen Macs die TimeMachine eingesetzt werden. Theoretisch ist auch eine Installation aus einem TimeMachine Backup möglich, praktisch verlangt das aber im Nachgang die Nachinstallation des Audio Treibers.
 
 ### 7 Offene Punkte
 
@@ -194,15 +191,18 @@ Folgende Einschränkungen sind in der beschriebenen Konfiguration vorhanden:
 * Nach dem Sleep-Mode ist der Audiotreiber nicht funktionsfähig
 * Der Sleep-Mode führt zum Absturz des Systems nach dem Neustart
 * Nach Systemupdates muss der Audiotreiber wieder neu installiert werden
-* Continuity ist nicht funktionsfähig
+* Continuity ist nicht funktionsfähig da keine WLAN Karte enthalten
 
 ### Referenzen
 
-[1] http://www.tonymacx86.com/yosemite-desktop-guides/144426-how-install-os-x-yosemite-using-clover.html
-[2] http://www.tonymacx86.com/user-builds/109540-success-squadsevens-build-i7-4770k-ga-z87x-ud3h-16gb-ram-gtx-780-3gb.html
-[4] http://www.macbreaker.com/2012/01/list-of-common-hackintosh-boot-flags_29.html
-[5] http://www.datenreise.de/macbook-pro-fusion-drive-selbst-erstellen-anleitung/#fusiondrive
-[6] http://www.idomix.de/234-fusion-drive-trennen-deaktivieren-rueckgaengig-machen-separieren
-[7] http://www.tonymacx86.com/general-help/110471-how-fix-imessage.html
-[8] http://www.macbreaker.com/2012/06/backup-your-hackintosh-with-carbon-copy.html
-[9] https://github.com/toleda/audio_CloverALC
+1. http://www.tonymacx86.com/yosemite-desktop-guides/144426-how-install-os-x-yosemite-using-clover.html
+2. http://www.tonymacx86.com/user-builds/109540-success-squadsevens-build-i7-4770k-ga-z87x-ud3h-16gb-ram-gtx-780-3gb.html
+3. http://www.macbreaker.com/2012/01/list-of-common-hackintosh-boot-flags_29.html
+4. http://www.datenreise.de/macbook-pro-fusion-drive-selbst-erstellen-anleitung/#fusiondrive
+5. http://www.idomix.de/234-fusion-drive-trennen-deaktivieren-rueckgaengig-machen-separieren
+6. http://www.tonymacx86.com/general-help/110471-how-fix-imessage.html
+7. http://www.macbreaker.com/2012/06/backup-your-hackintosh-with-carbon-copy.html
+8. https://github.com/toleda/audio_CloverALC
+9. http://www.tonymacx86.com/general-help/110471-how-fix-imessage.html
+10. http://mackie100projects.altervista.org/clover-configurator/
+11. https://selfsolve.apple.com
