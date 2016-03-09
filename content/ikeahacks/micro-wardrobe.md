@@ -11,7 +11,7 @@ Micro Wardrobe
 
 ## Inspiration
 
-A small space always lacks on luxury things like an large corridor therefore you have to be creative to store your clothing. In my case only a small corner less than 1.2m per 0.6m in the corridor was left. Unfortunately there is no suitable solution on the market so I had to build it myself.
+A small space always lacks on luxury things like an large corridor therefore you have to be creative to store your clothing. In my case only a small corner less than 1.2m per 0.6m in the corridor was left. Unfortunately there is not a suitable solution on the market so I had to build it myself.
 
 ## Concept
 
