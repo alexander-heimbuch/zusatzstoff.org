@@ -24,24 +24,24 @@
   },
   "homepage": "https://github.com/alexander-heimbuch/utterson-example#readme",
   "dependencies": {
-    "cheerio": "^0.19.0",
-    "common-dustjs-helpers": "^0.1.0",
+    "cheerio": "^0.22.0",
+    "common-dustjs-helpers": "^1.5.1",
     "dust-intl": "^1.1.0",
     "dustjs-helper-formatdate": "https://github.com/alexander-heimbuch/dustjs-helper-formatdate.git",
     "dustjs-helper-maxlength": "0.0.2",
     "dustjs-helpers": "^1.7.3",
     "dustjs-linkedin": "^2.7.2",
     "font-awesome": "^4.4.0",
-    "fs-extra": "^0.24.0",
-    "glob": "^5.0.15",
-    "lodash": "^3.10.1",
-    "pony-config": "^1.0.5",
+    "fs-extra": "^5.0.0",
+    "glob": "^7.1.2",
+    "lodash": "^4.17.4",
+    "pony-config": "^3.0.1",
     "request": "^2.65.0",
-    "uglify-js": "^2.5.0",
-    "uglifycss": "0.0.18",
+    "uglify-js": "^3.3.9",
+    "uglifycss": "0.0.27",
     "utterson": "^1.0.4"
   },
   "devDependencies": {
-    "surge": "^0.17.2"
+    "surge": "^0.19.0"
   }
 }
