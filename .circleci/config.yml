@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn build
+      - run: ./scripts/gh-deploy.sh dist
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
