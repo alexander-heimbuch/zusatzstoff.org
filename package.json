@@ -1,47 +1,21 @@
 {
   "name": "zusatzstoff.org",
   "version": "1.0.0",
+  "private": true,
   "description": "Zusatzstoff.org Website",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "rm -rf build/ && NODE_ENV=development node index.js",
-    "test": "node index.js"
+    "dev": "vuepress dev blog",
+    "build": "rm -rf dist/ && vuepress build blog --dest dist/",
+    "deploy:gh-pages": "GH_EMAIL=github@heimbu.ch GH_NAME='Alexander Heimbuch' ./scripts/gh-pages.sh dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alexander-heimbuch/zusatzstoff.org.git"
   },
-  "keywords": [
-    "utterson",
-    "example",
-    "template"
-  ],
   "author": "Alexander Heimbuch",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alexander-heimbuch/utterson-example/issues"
-  },
-  "homepage": "https://github.com/alexander-heimbuch/utterson-example#readme",
   "dependencies": {
-    "cheerio": "^0.19.0",
-    "common-dustjs-helpers": "^0.1.0",
-    "dust-intl": "^1.1.0",
-    "dustjs-helper-formatdate": "https://github.com/alexander-heimbuch/dustjs-helper-formatdate.git",
-    "dustjs-helper-maxlength": "0.0.2",
-    "dustjs-helpers": "^1.7.3",
-    "dustjs-linkedin": "^2.7.2",
-    "font-awesome": "^4.4.0",
-    "fs-extra": "^0.24.0",
-    "glob": "^5.0.15",
-    "lodash": "^3.10.1",
-    "pony-config": "^1.0.5",
-    "request": "^2.65.0",
-    "uglify-js": "^2.5.0",
-    "uglifycss": "0.0.18",
-    "utterson": "^1.0.4"
-  },
-  "devDependencies": {
-    "surge": "^0.17.2"
+    "vuepress": "^0.14.7",
+    "vuepress-theme-casper": "^1.0.2"
   }
 }
