@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vuepress dev blog",
     "build": "rm -rf dist/ && vuepress build blog --dest dist/",
-    "deploy:gh-pages": "GH_EMAIL=github@heimbu.ch GH_NAME='Alexander Heimbuch' ./scripts/gh-pages.sh dist"
+    "deploy:gh-pages": "GH_EMAIL=github@heimbu.ch GH_NAME='Alexander Heimbuch' ./scripts/gh-deploy.sh dist"
   },
   "repository": {
     "type": "git",
