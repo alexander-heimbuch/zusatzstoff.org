@@ -5,6 +5,9 @@ jobs:
       - image: node:12
     steps:
       - checkout
+      - add_ssh_keys: # THEN set the *new* SSH key for github.
+          fingerprints:
+            - "b6:cf:b7:62:97:b3:87:9a:13:f0:c3:71:2e:1c:24:03"
       - run: npm ci
       - run: npm run build
       - run: ./scripts/gh-deploy.sh dist
