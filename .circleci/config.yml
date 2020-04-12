@@ -5,7 +5,7 @@ jobs:
       - image: node:12
     steps:
       - checkout
-      - run: npm i
+      - run: npm ci
       - run: npm run build
       - run: ./scripts/gh-deploy.sh dist
 
