@@ -15,7 +15,7 @@
   "author": "Alexander Heimbuch",
   "license": "MIT",
   "dependencies": {
-    "vuepress": "^0.14.7",
-    "vuepress-theme-casper": "^1.0.2"
+    "vuepress": "1.4.0",
+    "vuepress-theme-casper": "3.0.1"
   }
 }

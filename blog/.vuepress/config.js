@@ -27,13 +27,13 @@ module.exports = {
         text: 'Mac',
         link: '/category/mac'
       }],
-  
+
       footer: [{
         text: 'Impressum',
         link: '/impressum.html'
       }],
       social: {
-        github: 'https://github.com/alexander-heimbuch/vuepress-theme-casper',
+        github: 'https://github.com/alexander-heimbuch',
         twitter: 'https://twitter.com/zusatzstoff'
       }
     }
