@@ -2,11 +2,11 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: node:10
+      - image: node:12
     steps:
       - checkout
-      - run: yarn
-      - run: yarn build
+      - run: npm i
+      - run: npm run build
       - run: ./scripts/gh-deploy.sh dist
 
 workflows:
